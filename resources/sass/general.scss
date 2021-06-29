@@ -1,0 +1,84 @@
+@import "mixins";
+@import "variables";
+
+.menu-icon {
+    border-radius: 50%;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    @include center-hor-ver
+}
+
+.menu-icon:hover {
+    background-color: $hover-color;
+    @include center-hor-ver
+}
+
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 54.22px;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+.sidenav a {
+    padding: 0 !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    display: block;
+    transition: 0.3s;
+}
+#open {
+    display: none;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    transition: 0.3s;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+    overflow: auto;
+    margin-left: 200px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+.p-accordion .p-accordion-content {
+    border: none !important;
+    background: transparent !important;
+}
+.p-accordion .p-accordion-header .p-accordion-header-link {
+    padding: 5px !important;
+    border: none !important;
+    margin-left: 0 !important;
+    background: transparent !important;
+    font-weight: 400 !important;
+    font-size: 16px;
+    text-decoration: none !important;
+}
+
+.p-accordion .p-accordion-header:not(.p-disabled) .p-accordion-header-link:focus
+ {
+    box-shadow: none !important;
+    outline: none !important;
+}
+.p-accordion .p-accordion-header .p-accordion-header-link .p-accordion-toggle-icon {
+    margin-right: 1rem;
+    margin-top: 8px;
+    float: right !important;
+}
